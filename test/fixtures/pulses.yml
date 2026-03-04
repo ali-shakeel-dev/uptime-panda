@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  url: MyString
+  pulse_internal: 1
+  pulse_type: 1
+  status_page: false
+
+two:
+  user: two
+  url: MyString
+  pulse_internal: 1
+  pulse_type: 1
+  status_page: false
