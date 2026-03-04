@@ -1,0 +1,17 @@
+<header class="bg-background">
+  <div class="container mx-auto flex flex-wrap p-4 flex-col md:flex-row items-center">
+    <a href="/" class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-secondary rounded-full" viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+      </svg>
+      <span class="ml-3 text-xl text-secondary font-bold">UptimePanda</span>
+    </a>
+    <nav class="md:ml-auto flex flex-wrap items-center text-secondary justify-center">
+      <a class="mr-5 hover:text-white cursor-pointer">First Link</a>
+      <a class="mr-5 hover:text-white cursor-pointer">Second Link</a>
+      <a class="mr-5 hover:text-white cursor-pointer">Third Link</a>
+      <a class="mr-5 hover:text-white cursor-pointer">Log in</a>
+    </nav>
+    <%= render "partials/primary_button" %>
+  </div>
+</header>
