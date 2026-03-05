@@ -1,17 +1,25 @@
-<header class="bg-background">
-  <div class="container mx-auto flex flex-wrap p-4 flex-col md:flex-row items-center">
-    <a href="/" class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+<header class="bg-background border border-secondary/10">
+  <div class="flex flex-wrap p-4 flex-col md:flex-row items-center">
+    <a href="<%= current_user.present? ? monitors_path : root_path %>" class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-secondary rounded-full" viewBox="0 0 24 24">
         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
       </svg>
-      <span class="ml-3 text-xl text-secondary font-bold">UptimePanda</span>
+      <span class="ml-3 text-xl text-secondary font-bold">
+      UptimePanda
+      <p class="text-sm text-gray-700 font-medium">Dashboard</p>
+      </span>
     </a>
     <nav class="md:ml-auto flex flex-wrap items-center text-secondary justify-center">
       <a class="mr-5 hover:text-white cursor-pointer">First Link</a>
       <a class="mr-5 hover:text-white cursor-pointer">Second Link</a>
       <a class="mr-5 hover:text-white cursor-pointer">Third Link</a>
-      <a class="mr-5 hover:text-white cursor-pointer">Log in</a>
+      <% if current_user.present? %>
+      <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "mr-5 hover:text-white cursor-pointer font-bold" %>
+        <a class="mr-5 hover:text-white cursor-pointer font-bold">You are in pal. ✌</a>
+      <% else %>
+        <a href="<%= new_user_session_path %>" class="mr-5 hover:text-white cursor-pointer">Log in</a>
+        <%= render "partials/primary_button", url_path: new_user_registration_path %>
+      <% end %>
     </nav>
-    <%= render "partials/primary_button" %>
   </div>
 </header>
