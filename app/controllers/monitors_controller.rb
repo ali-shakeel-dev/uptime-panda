@@ -1,6 +1,6 @@
 class MonitorsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_monitor, only: [:edit]
+  before_action :set_monitor, only: [:edit, :show, :update, :destroy]
 
 
   def index
@@ -28,15 +28,15 @@ class MonitorsController < ApplicationController
   end
 
   def update
+    @pulse = current_user.pulses.find(params[:id])
     @pulse.update(monitor_params)
-    redirect_to @pulse
+    redirect_to monitors_path
   end
 
   def destroy 
     @pulse.destroy
     redirect_to monitors_path
   end
-
 
   private 
 

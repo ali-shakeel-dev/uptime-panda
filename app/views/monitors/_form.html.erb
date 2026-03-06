@@ -2,18 +2,18 @@
   <%= render "partials/sidebar" %>
 
   <div class="flex justify-center flex-1 p-8">
-    <div class="max-w-xl h-fit bg-white border border-secondary/10 rounded-lg p-6">
+    <div class="max-w-xl h-fit bg-white border border-secondary/10 p-6">
 
-      <h2 class="text-xl font-semibold mb-6">Create Monitor</h2>
+      <h2 class="text-xl font-semibold mb-6"><%= @pulse.persisted? ? "Update Monitor" : "Create Monitor" %></h2>
 
-      <%= form_with model: @pulse, url: monitors_path, class: "space-y-6" do |f| %>
+      <%= form_with model: @pulse, url: @pulse.persisted? ? monitor_path(@pulse) : monitors_path, class: "space-y-6" do |f| %>
 
         <!-- Website URL -->
         <div>
           <%= f.label :url, "Website URL", class: "block text-sm font-medium text-gray-700 mb-1" %>
           <%= f.text_field :url,
             placeholder: "https://example.com",
-            class: "w-full border border-secondary/10 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-secondary/20" %>
+            class: "w-full border border-secondary/10 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-secondary/20", required: true %>
           <p class="text-xs text-gray-500 mt-1">
             Enter the full URL you want to monitor.
           </p>
@@ -60,8 +60,8 @@
 
         <!-- Submit -->
         <div class="pt-4">
-          <%= f.submit "Create Monitor",
-            class: "bg-black text-white px-5 py-2 rounded-md hover:bg-gray-800 transition cursor-pointer" %>
+          <%= f.submit (@pulse.persisted? ? "Update Monitor" : "Create Monitor"),
+            class: "inline-flex items-center bg-secondary hover:bg-black border-0 py-2 px-4 focus:outline-none text-white font-bold mt-4 md:mt-0 cursor-pointer" %>
         </div>
 
       <% end %>
