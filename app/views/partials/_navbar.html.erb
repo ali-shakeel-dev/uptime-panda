@@ -6,7 +6,9 @@
       </svg>
       <span class="ml-3 text-xl text-secondary font-bold">
       UptimePanda
-      <p class="text-sm text-gray-700 font-medium">Dashboard</p>
+      <% if current_user.present? %>
+        <p class="text-sm text-gray-700 font-medium">Dashboard</p>
+      <% end %>
       </span>
     </a>
     <nav class="md:ml-auto flex flex-wrap items-center text-secondary justify-center">
@@ -18,7 +20,7 @@
         <a class="mr-5 hover:text-white cursor-pointer font-bold">You are in pal. ✌</a>
       <% else %>
         <a href="<%= new_user_session_path %>" class="mr-5 hover:text-white cursor-pointer">Log in</a>
-        <%= render "partials/primary_button", url_path: new_user_registration_path %>
+        <%= render "partials/primary_button", value: "Create Account", url_path: new_user_registration_path %>
       <% end %>
     </nav>
   </div>

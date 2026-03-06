@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
   resources :monitors
   get "status", to: "status#index"
+  get "notifications", to: "notifications#index"
   root "home#index"
 end

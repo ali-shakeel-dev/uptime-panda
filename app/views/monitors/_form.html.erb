@@ -1,0 +1,71 @@
+<div class="flex min-h-screen">
+  <%= render "partials/sidebar" %>
+
+  <div class="flex justify-center flex-1 p-8">
+    <div class="max-w-xl h-fit bg-white border border-secondary/10 rounded-lg p-6">
+
+      <h2 class="text-xl font-semibold mb-6">Create Monitor</h2>
+
+      <%= form_with model: @pulse, url: monitors_path, class: "space-y-6" do |f| %>
+
+        <!-- Website URL -->
+        <div>
+          <%= f.label :url, "Website URL", class: "block text-sm font-medium text-gray-700 mb-1" %>
+          <%= f.text_field :url,
+            placeholder: "https://example.com",
+            class: "w-full border border-secondary/10 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-secondary/20" %>
+          <p class="text-xs text-gray-500 mt-1">
+            Enter the full URL you want to monitor.
+          </p>
+        </div>
+
+        <!-- Monitor Type -->
+        <div>
+          <%= f.label :pulse_type, "Monitor Type", class: "block text-sm font-medium text-gray-700 mb-1" %>
+          <%= f.select :pulse_type,
+            [
+              ["HTTP Request", 0],
+              ["Ping", 1],
+              ["Keyword", 2]
+            ],
+            {},
+            class: "w-full border border-secondary/10 rounded-md px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-secondary/20" %>
+        </div>
+
+        <!-- Check Interval -->
+        <div>
+          <%= f.label :pulse_interval, "Check Interval", class: "block text-sm font-medium text-gray-700 mb-1" %>
+          <%= f.select :pulse_interval,
+            [
+              ["1 minute", 1],
+              ["5 minutes", 5],
+              ["10 minutes", 10],
+              ["30 minutes", 30],
+              ["1 hour", 60]
+            ],
+            {},
+            class: "w-full border border-secondary/10 rounded-md px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-secondary/20" %>
+          <p class="text-xs text-gray-500 mt-1">
+            How often we should check your website.
+          </p>
+        </div>
+
+        <!-- Status Page -->
+        <div class="flex items-center gap-3">
+          <%= f.check_box :status_page,
+            class: "h-4 w-4 rounded border-secondary/20 text-black focus:ring-secondary/20" %>
+          <%= f.label :status_page, "Show this monitor on your public status page",
+            class: "text-sm text-gray-700" %>
+        </div>
+
+        <!-- Submit -->
+        <div class="pt-4">
+          <%= f.submit "Create Monitor",
+            class: "bg-black text-white px-5 py-2 rounded-md hover:bg-gray-800 transition cursor-pointer" %>
+        </div>
+
+      <% end %>
+
+    </div>  
+  </div>
+</div>
