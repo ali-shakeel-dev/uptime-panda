@@ -4,29 +4,32 @@
   <div class="flex-1 p-6">
 
   <section class="text-gray-600 body-font pb-4">
+
+  <button class="inline-flex items-center bg-background/50 border border-secondary/10 py-2 mb-4 px-4 mt-3 text-lg text-gray-900 font-medium mb-4"><%=@monitors_count%> / 10 Monitors</button>
+
       <div class="flex flex-wrap -m-4">
         <div class="xl:w-1/4 md:w-1/2 p-4">
           <div class="bg-background/50 border border-secondary/10 p-6">
-            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Chichen Itza</h2>
+            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">Up Monitors</h3>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">0</h2>
           </div>
         </div>
         <div class="xl:w-1/4 md:w-1/2 p-4">
           <div class="bg-background/50 border border-secondary/10 p-6">
-            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Chichen Itza</h2>
+            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">Down Monitors</h3>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">0</h2>
           </div>
         </div>
         <div class="xl:w-1/4 md:w-1/2 p-4">
           <div class="bg-background/50 border border-secondary/10 p-6">
-            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Chichen Itza</h2>
+            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">Overall Uptime</h3>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">0%</h2>
           </div>
         </div>
         <div class="xl:w-1/4 md:w-1/2 p-4">
           <div class="bg-background/50 border border-secondary/10 p-6">
-            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Chichen Itza</h2>
+            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">Public Status Pages</h3>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-4"><%=@enabled_status_page_count%></h2>
           </div>
         </div>
       </div>

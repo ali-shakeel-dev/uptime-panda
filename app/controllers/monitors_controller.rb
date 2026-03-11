@@ -5,6 +5,8 @@ class MonitorsController < ApplicationController
 
   def index
     @pulses = current_user.pulses.order(created_at: :desc)
+    @enabled_status_page_count = Pulse.status_pages.count
+    @monitors_count = Pulse.monitors.count
   end
 
   def new
