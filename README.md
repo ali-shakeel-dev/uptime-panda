@@ -1,24 +1,18 @@
-# README
+# Uptime Panda 🐼
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple website uptime monitoring tool built with **Ruby on Rails**. Tracks website availability, logs uptime history, and performs scheduled health checks.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- Monitor multiple websites  
+- Scheduled background checks with **Sidekiq**, **Redis**, and **Sidekiq Cron**  
+- Paginated dashboard using **Kaminari**  
+- User authentication and basic dashboard  
 
-* System dependencies
+## Tech Stack
 
-* Configuration
+**Ruby on Rails | PostgreSQL | Sidekiq | Redis | Kaminari**
 
-* Database creation
+## Usage
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Clone, `bundle install`, `rails db:migrate`, start Redis & Sidekiq, then `rails server`. Visit `http://localhost:3000`.
